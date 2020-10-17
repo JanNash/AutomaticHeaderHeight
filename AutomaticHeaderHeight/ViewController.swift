@@ -49,7 +49,9 @@ class ViewController: UICollectionViewController {
         )
         
         dataSource.supplementaryViewProvider = {
-            $0.dequeueConfiguredReusableSupplementary(using: supplementaryRegistration, for: $2)
+            let view = $0.dequeueConfiguredReusableSupplementary(using: supplementaryRegistration, for: $2)
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
         }
         
         return dataSource
